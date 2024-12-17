@@ -1,12 +1,22 @@
-// Select the hamburger menu and nav-links
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a'); // Target all links
 
-// Add event listener to toggle the 'active' class
+// Toggle the nav menu visibility
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-  console.log(navLinks.classList + "Clicked");
 });
+
+// Add active class to the clicked link and remove it from others
+navItems.forEach((link) => {
+  link.addEventListener('click', () => {
+    // Remove 'active' class from all links
+    navItems.forEach((item) => item.classList.remove('active'));
+    // Add 'active' class to the clicked link
+    link.classList.add('active');
+  });
+});
+
 
 // Translation Section
   const translations = {
