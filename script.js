@@ -5,4 +5,5 @@ const navLinks = document.querySelector('.nav-links');
 // Add event listener to toggle the 'active' class
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  console.log(navLinks.classList + "Clicked");
 });

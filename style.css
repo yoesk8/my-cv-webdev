@@ -94,4 +94,25 @@
       margin: 15px 0;
     }
   }
+
+  /* Logo Animation */
+  /* Logo Animation */
+@keyframes slideIn {
+    0% {
+      transform: translateX(-100px); /* Start off-screen */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); /* End at original position */
+      opacity: 1;
+    }
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    animation: slideIn 1s ease-in-out; /* Apply animation */
+    color: #00bcd4; /* Optional: Add a nice color to the logo */
+    text-shadow: 0px 0px 5px rgba(0, 188, 212, 0.5); /* Optional glow effect */
+  }
   
