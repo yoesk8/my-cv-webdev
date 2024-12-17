@@ -1,0 +1,97 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Body styling */
+  body {
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Navbar container */
+  header {
+    background-color: #333; /* Dark background */
+    color: #fff;
+    position: sticky;
+    top: 0; /* Navbar sticks to the top */
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  /* Logo Styling */
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00bcd4; /* Light blue on hover */
+  }
+  
+  /* Hamburger Menu (Hidden on Desktop) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: flex; /* Show hamburger menu */
+    }
+  
+    .nav-links {
+      display: none; /* Hide links by default on small screens */
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: flex; /* Show when toggled */
+    }
+  
+    .nav-links li {
+      margin: 15px 0;
+    }
+  }
+  
