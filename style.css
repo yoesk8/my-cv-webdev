@@ -115,4 +115,114 @@
     color: #00bcd4; /* Optional: Add a nice color to the logo */
     text-shadow: 0px 0px 5px rgba(0, 188, 212, 0.5); /* Optional glow effect */
   }
+
+  /* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #333333, #00bcd4); /* Gradient background */
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Hero Content */
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease-out; /* Fade animation */
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .hero-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #333;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-content .btn:hover {
+    background-color: #00bcd4;
+    color: #fff;
+  }
+  
+  /* Hero Image */
+  .hero-image img {
+    width: 100%;
+    max-width: 400px;
+    animation: slideInRight 1.2s ease-out; /* Slide animation */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      height: auto;
+      padding: 30px 10px;
+    }
+  
+    .hero-content h1 {
+      font-size: 2em;
+    }
+  
+    .hero-content p {
+      font-size: 1em;
+    }
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Hero Image */
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
+                0 6px 6px rgba(0, 0, 0, 0.23); /* Soft shadows */
+    transform: rotate(-2deg); /* Subtle tilt */
+    transition: all 0.5s ease; /* Smooth transition for hover */
+    animation: slideInRight 1.2s ease-out; /* Slide animation */
+  }
+  
+  /* Add Hover Effect */
+  .hero-image img:hover {
+    transform: scale(1.05) rotate(0deg); /* Scale up slightly and level out */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4), 
+                0 10px 10px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+  }
   
