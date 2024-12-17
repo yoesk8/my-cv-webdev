@@ -225,4 +225,34 @@
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4), 
                 0 10px 10px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
   }
+
+/* Translate Button Styling */
+.translate-btn {
+    padding: 8px 12px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
   
+  .translate-btn:hover {
+    background-color: #008c9e;
+  }
+  
+  /* Center the Button */
+  .nav-links li button {
+    text-align: center; /* Center the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Responsive Alignment */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+    }
+  }
