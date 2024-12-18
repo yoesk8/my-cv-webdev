@@ -412,74 +412,192 @@
     }
   }
 
-  /* Projects Section */
+ /* Projects Section */
 .projects-section {
-  padding: 60px 20px;
-  background-color: #fff;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
   text-align: center;
 }
 
 .section-title {
   font-size: 2.5em;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* Projects Container */
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
 }
 
+/* Project Card */
 .project-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.7);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.9);
 }
 
+/* Project Image */
 .project-image img {
   width: 100%;
-  display: block;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+/* Project Details */
 .project-details {
   padding: 20px;
+  text-align: left;
 }
 
 .project-details h3 {
-  font-size: 1.5em;
-  color: #333;
+  font-size: 1.8em;
   margin-bottom: 10px;
+  color: #00bcd4;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-details h3 {
+  color: #008c9e;
 }
 
 .project-details p {
   font-size: 1em;
   color: #555;
+  line-height: 1.6;
   margin-bottom: 15px;
 }
 
-.project-link {
+/* View Project Button */
+.view-project-btn {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #00bcd4;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #00bcd4, #008c9e);
+  color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px rgba(255, 255, 255, 0.3);
 }
 
-.project-link:hover {
-  background-color: #005bb5;
+.view-project-btn:hover {
+  background: linear-gradient(145deg, #00bcd4, #008c9e);
+  transform: scale(1.1);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.6);
+}
+
+
+/* Modal Container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Modal Image */
+.modal img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.live-site {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.github-repo {
+  background-color: #333;
+  color: white;
+}
+
+.modal-button:hover {
+  transform: scale(1.1);
+}
+
+.live-site:hover {
+  background-color: #008c9e;
+}
+
+.github-repo:hover {
+  background-color: #000;
 }
 
   

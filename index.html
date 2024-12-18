@@ -60,10 +60,11 @@
     </div>
   </section>
   <!-- Projects Section -->
+<!-- Projects Section -->
 <section id="projects" class="projects-section">
   <h2 class="section-title">My Projects</h2>
   <div class="projects-container">
-    <!-- Project 1 -->
+    <!-- Project Card Example -->
     <div class="project-card">
       <div class="project-image">
         <img src="https://via.placeholder.com/300x200" alt="Project 1" />
@@ -73,37 +74,31 @@
         <p>
           A responsive website built with HTML, CSS, and JavaScript to showcase clean design and interactivity.
         </p>
-        <a href="#" class="project-link" target="_blank">View Project</a>
+        <button class="view-project-btn" data-title="Project One" 
+                data-image="https://via.placeholder.com/300x200" 
+                data-description="This is a detailed description of Project One. It demonstrates responsive design principles and interactivity.">
+          View Project
+        </button>
       </div>
     </div>
-    <!-- Project 2 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="https://via.placeholder.com/300x200" alt="Project 2" />
-      </div>
-      <div class="project-details">
-        <h3>Project Two</h3>
-        <p>
-          A dynamic web application using JavaScript to deliver a seamless user experience.
-        </p>
-        <a href="#" class="project-link" target="_blank">View Project</a>
-      </div>
-    </div>
-    <!-- Project 3 -->
-    <div class="project-card">
-      <div class="project-image">
-        <img src="https://via.placeholder.com/300x200" alt="Project 3" />
-      </div>
-      <div class="project-details">
-        <h3>Project Three</h3>
-        <p>
-          A creative landing page demonstrating modern design principles and animations.
-        </p>
-        <a href="#" class="project-link" target="_blank">View Project</a>
-      </div>
-    </div>
+    <!-- Add more project cards as needed -->
   </div>
 </section>
+
+<!-- Modal Template -->
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img id="modal-image" src="" alt="Project Image" />
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+    <div class="modal-buttons">
+      <a id="live-site-btn" href="#" target="_blank" class="modal-button live-site">🔗 Live Site</a>
+      <a id="github-repo-btn" href="#" target="_blank" class="modal-button github-repo">💻 GitHub Repo</a>
+    </div>
+  </div>
+</div>
+
 
   
   
