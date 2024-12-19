@@ -40,43 +40,101 @@
       <img src="/hero-profile-pic.jpeg" alt="Developer Image">
     </div>
   </section>
-
- <!-- About Me Section -->
-<section id="about" class="about-section">
+<!-- About Sectin -->
+  <section id="about" class="about-section">
     <div class="about-container">
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design.
-          <br>
-          My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new.
+          Hello! I'm a passionate web developer dedicated to creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new.
         </p>
       </div>
       <div class="about-icons">
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-js-square"></i>
+        <div class="icon-card">
+          <i class="fab fa-html5"></i>
+          <p>HTML</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-css3-alt"></i>
+          <p>CSS</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-js-square"></i>
+          <p>JavaScript</p>
+        </div>
       </div>
     </div>
   </section>
+  
   <!-- Projects Section -->
 <!-- Projects Section -->
 <section id="projects" class="projects-section">
   <h2 class="section-title">My Projects</h2>
   <div class="projects-container">
-    <!-- Project Card Example -->
+    <!-- Project Card 1 -->
     <div class="project-card">
       <div class="project-image">
-        <img src="https://via.placeholder.com/300x200" alt="Project 1" />
+        <img src="/personal-trainer-site.png" alt="Project 1" />
       </div>
       <div class="project-details">
-        <h3>Project One</h3>
+        <h3>Website for freelancer</h3>
         <p>
           A responsive website built with HTML, CSS, and JavaScript to showcase clean design and interactivity.
         </p>
         <button class="view-project-btn" data-title="Project One" 
-                data-image="https://via.placeholder.com/300x200" 
+                data-image="/personal-trainer-site.png" 
                 data-description="This is a detailed description of Project One. It demonstrates responsive design principles and interactivity.">
+          View Project
+        </button>
+      </div>
+    </div>
+    <!-- Project Card 2 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="/quiz-app.png" alt="Project 2" />
+      </div>
+      <div class="project-details">
+        <h3>Bitcoin quiz app</h3>
+        <p>
+          A responsive website built with HTML, CSS, and JavaScript to showcase clean design and interactivity.
+        </p>
+        <button class="view-project-btn" data-title="Project Two" 
+                data-image="/quiz-app.png" 
+                data-description="This is a detailed description of Project Two. It demonstrates responsive design principles and interactivity.">
+          View Project
+        </button>
+      </div>
+    </div>
+    <!-- Project Card 3 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="/pool-testing-buddy.png" alt="Project 2" />
+      </div>
+      <div class="project-details">
+        <h3>Pool testing buddy</h3>
+        <p>
+          A responsive website built with HTML, CSS, and JavaScript to showcase clean design and interactivity.
+        </p>
+        <button class="view-project-btn" data-title="Pool Testing Buddy" 
+                data-image="/pool-testing-buddy.png" 
+                data-description="This is a detailed description of Project Two. It demonstrates responsive design principles and interactivity.">
+          View Project
+        </button>
+      </div>
+    </div>
+    <!-- Project Card 4 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="/fitness-blog.png" alt="Project 2" />
+      </div>
+      <div class="project-details">
+        <h3>Fitness Blog with e-commerce</h3>
+        <p>
+          A responsive website built with HTML, CSS, and JavaScript to showcase clean design and interactivity.
+        </p>
+        <button class="view-project-btn" data-title="Pool Testing Buddy" 
+                data-image="/pool-testing-buddy.png" 
+                data-description="This is a detailed description of Project Two. It demonstrates responsive design principles and interactivity.">
           View Project
         </button>
       </div>
@@ -85,23 +143,20 @@
   </div>
 </section>
 
-<!-- Modal Template -->
+<!-- Modal  -->
 <div id="project-modal" class="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
-    <img id="modal-image" src="" alt="Project Image" />
+    <img id="modal-image" src="/personal-trainer-site.png" alt="Project Image" />
     <h3 id="modal-title"></h3>
     <p id="modal-description"></p>
     <div class="modal-buttons">
-      <a id="live-site-btn" href="#" target="_blank" class="modal-button live-site">🔗 Live Site</a>
-      <a id="github-repo-btn" href="#" target="_blank" class="modal-button github-repo">💻 GitHub Repo</a>
+      <a id="live-site-btn" href="#" target="_blank" class="modal-button live-site"><i class="fas fa-link"></i> Live Site</a>
+      <a id="github-repo-btn" href="#" target="_blank" class="modal-button github-repo"><i class="fab fa-github"></i> Github repo</a>
     </div>
   </div>
 </div>
 
-
-  
-  
 
   <script src="script.js"></script> <!-- Link to your JS file -->
 </body>

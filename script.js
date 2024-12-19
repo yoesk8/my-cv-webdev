@@ -34,7 +34,7 @@ navItems.forEach((link) => {
       buttonText: "Observa Mi Trabajo",
       translateButton: "English",
       aboutTitle: "Sobre Mi",
-      aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy codificando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo."
+      aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo."
     },
   };
 
