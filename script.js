@@ -26,7 +26,12 @@ navItems.forEach((link) => {
       buttonText: "View My Work",
       translateButton: "Español",
       aboutTitle: "About Me",
-      aboutSubtitle: "Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new"
+      aboutSubtitle: "Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new",
+      projectsTitle: "My Projects",
+      projectOneTitle: "Website for Freelancer",
+      projectTwoTitle: "Bitcoin Quiz app",
+      projectThreeTitle: "Pool Testing Buddy",
+      projectFourTitle: "Fitness blog with e-commerce",
     },
     es: {
       heroTitle: "Bienvenido a Mi Portafolio",
@@ -34,7 +39,12 @@ navItems.forEach((link) => {
       buttonText: "Observa Mi Trabajo",
       translateButton: "English",
       aboutTitle: "Sobre Mi",
-      aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo."
+      aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo.",
+      projectsTitle: "Mis Proyectos",
+      projectOneTitle: "Sitio web para Negocio autónomo",
+      projectTwoTitle: "Juego de Trivia sobre Bitcoin",
+      projectThreeTitle: "Ayudante para tests de piscinas",
+      projectFourTitle: "Blog de Fitness con e-commerce",
     },
   };
 
@@ -46,6 +56,11 @@ navItems.forEach((link) => {
   const aboutSubtitle = document.querySelector(".about-container p");
   const heroSubtitle = document.querySelector(".hero-content p");
   const ctaButton = document.querySelector(".hero-content .btn");
+  const projectsTitle = document.getElementById("projects-title");
+  const projectOneTitle = document.getElementById("project-one-title");
+  const projectTwoTitle = document.getElementById("project-two-title");
+  const projectThreeTitle = document.getElementById("project-three-title");
+  const projectFourTitle = document.getElementById("project-four-title");
 
   translateBtn.addEventListener("click", () => {
     // Toggle language
@@ -58,6 +73,11 @@ navItems.forEach((link) => {
     aboutSubtitle.textContent = translations[currentLang].aboutSubtitle;
     ctaButton.textContent = translations[currentLang].buttonText;
     translateBtn.textContent = translations[currentLang].translateButton;
+    projectsTitle.textContent = translations[currentLang].projectsTitle;
+    projectOneTitle.textContent = translations[currentLang].projectOneTitle;
+    projectTwoTitle.textContent = translations[currentLang].projectTwoTitle;
+    projectThreeTitle.textContent = translations[currentLang].projectThreeTitle;
+    projectFourTitle.textContent = translations[currentLang].projectFourTitle;
   });
 
   // Select modal elements
