@@ -28,10 +28,15 @@ navItems.forEach((link) => {
       aboutTitle: "About Me",
       aboutSubtitle: "Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new",
       projectsTitle: "My Projects",
+      viewProjectButton: "View Project",
       projectOneTitle: "Website for Freelancer",
       projectTwoTitle: "Bitcoin Quiz app",
       projectThreeTitle: "Pool Testing Buddy",
       projectFourTitle: "Fitness blog with e-commerce",
+      projecOneDescription: "A responsive website built with HTML, CSS, and Bootstrap to showcase clean design and interactivity.",
+      projectTwoDescription: "A quiz game built with HTML, CSS, and JavaScript to test your knowledge about Bitcoin while displaying Bitcoin's real time price.",
+      projectThreeDescription: "A fullstack website built with Flask to keep track of pool testing logs",
+      projectFourDescription: " A fitness blog built with django and stripe with CRUD functionality and an e-commerce platform",
     },
     es: {
       heroTitle: "Bienvenido a Mi Portafolio",
@@ -41,10 +46,15 @@ navItems.forEach((link) => {
       aboutTitle: "Sobre Mi",
       aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo.",
       projectsTitle: "Mis Proyectos",
+      viewProjectButton: "Ver Proyecto",
       projectOneTitle: "Sitio web para Negocio autónomo",
       projectTwoTitle: "Juego de Trivia sobre Bitcoin",
       projectThreeTitle: "Ayudante para tests de piscinas",
       projectFourTitle: "Blog de Fitness con e-commerce",
+      projecOneDescription: "Un sitio web adaptivo construido con HTML, CSS y Bootstrap para mostrar un diseño limpio e interactividad.",
+      projectTwoDescription: "Un juego de preguntas y respuestas construido con HTML, CSS y JavaScript para poner a prueba tus conocimientos sobre Bitcoin mientras muestra el precio en tiempo real de Bitcoin.",
+      projectThreeDescription: "Un sitio web fullstack construido con Flask para llevar un registro de los registros de pruebas de piscina.",
+      projectFourDescription: "Un blog de fitness construido con Django y Stripe con funcionalidad CRUD y una plataforma de comercio electrónico.",
     },
   };
 
@@ -61,10 +71,19 @@ navItems.forEach((link) => {
   const projectTwoTitle = document.getElementById("project-two-title");
   const projectThreeTitle = document.getElementById("project-three-title");
   const projectFourTitle = document.getElementById("project-four-title");
+  const projecOneDescription = document.getElementById("project-one-description");
+  const projectTwoDescription = document.getElementById("project-two-description");
+  const projectThreeDescription = document.getElementById("project-three-description");
+  const projectFourDescription = document.getElementById("project-four-description");
+  const viewProjectButton = document.querySelectorAll(".view-project-btn")
 
   translateBtn.addEventListener("click", () => {
     // Toggle language
     currentLang = currentLang === "en" ? "es" : "en";
+
+    // Button update
+
+    viewProjectButton.forEach(button=> button.textContent = translations[currentLang].viewProjectButton);
 
     // Update text content
     heroTitle.textContent = translations[currentLang].heroTitle;
@@ -78,6 +97,10 @@ navItems.forEach((link) => {
     projectTwoTitle.textContent = translations[currentLang].projectTwoTitle;
     projectThreeTitle.textContent = translations[currentLang].projectThreeTitle;
     projectFourTitle.textContent = translations[currentLang].projectFourTitle;
+    projecOneDescription.textContent = translations[currentLang].projecOneDescription;
+    projectTwoDescription.textContent = translations[currentLang].projectTwoDescription;
+    projectThreeDescription.textContent = translations[currentLang].projectThreeDescription;
+    projectFourDescription.textContent = translations[currentLang].projectFourDescription;
   });
 
   // Select modal elements
