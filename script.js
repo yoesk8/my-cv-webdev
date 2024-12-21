@@ -19,6 +19,9 @@ navItems.forEach((link) => {
 
 
 // Translation Section
+
+let currentLang = "en"; // Start with English
+
   const translations = {
     en: {
       heroTitle: "Welcome to My Portfolio",
@@ -57,8 +60,6 @@ navItems.forEach((link) => {
       projectFourDescription: "Un blog de fitness construido con Django y Stripe con funcionalidad CRUD y una plataforma de comercio electrónico.",
     },
   };
-
-  let currentLang = "en"; // Start with English
 
   const translateBtn = document.getElementById("translate-btn");
   const heroTitle = document.querySelector(".hero-content h1");
@@ -116,9 +117,9 @@ const closeBtn = document.querySelector('.close-btn');
 const projectButtons = document.querySelectorAll('.view-project-btn');
 projectButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const title = button.dataset.title;
+    const title = button.dataset[currentLang === "en" ? "titleEn" : "titleEs"];
+    const description = button.dataset[currentLang === "en" ? "descriptionEn" : "descriptionEs"];
     const image = button.dataset.image;
-    const description = button.dataset.description;
     const liveLink = '#'; // Replace with actual live link
     const githubLink = '#'; // Replace with actual GitHub link
 
