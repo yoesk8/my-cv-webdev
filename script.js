@@ -146,3 +146,43 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+// Form validation and escaping button
+const form = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // Check if all inputs are filled
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (name && email && message) {
+    alert("Message sent successfully!");
+    form.reset();
+  } else {
+    alert("Please fill in all fields!");
+  }
+});
+
+// Escape button if fields are empty
+form.addEventListener("mousemove", (e) => {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    const rect = submitBtn.getBoundingClientRect();
+    const btnWidth = rect.width;
+    const btnHeight = rect.height;
+
+    // Random direction
+    const randomX = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
+    const randomY = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
+
+    submitBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+  } else {
+    submitBtn.style.transform = "none";
+  }
+});
