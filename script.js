@@ -147,42 +147,61 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// Form validation and escaping button
+// Inicializar EmailJS con tu Public Key
+(function () {
+  emailjs.init("sg8m7PJKFYgFbwxTG"); // Reemplaza con tu clave pública de EmailJS
+})();
+
+// Seleccionar elementos del DOM
 const form = document.getElementById("contact-form");
 const submitBtn = document.getElementById("submit-btn");
 
+// Enviar formulario con EmailJS
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // Check if all inputs are filled
+  e.preventDefault(); // Evita el comportamiento predeterminado del formulario
+
+  // Obtener valores de los campos
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
   if (name && email && message) {
-    alert("Message sent successfully!");
-    form.reset();
+    const serviceID = "service_97oty2i"; // Reemplaza con tu Service ID
+    const templateID = "contact_form"; // Reemplaza con tu Template ID
+
+    // Crear objeto con los datos del formulario
+    const formData = { name, email, message };
+
+    // Enviar datos con EmailJS
+    emailjs
+      .send(serviceID, templateID, formData)
+      .then(() => {
+        alert("Message sent successfully! 🎉");
+        form.reset(); // Limpia el formulario
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        alert("Failed to send the message. Please try again.");
+      });
   } else {
     alert("Please fill in all fields!");
   }
 });
 
-// Escape button if fields are empty
-form.addEventListener("mousemove", (e) => {
+// Validación y efecto de "escapar" del botón
+form.addEventListener("mousemove", () => {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
   if (!name || !email || !message) {
     const rect = submitBtn.getBoundingClientRect();
-    const btnWidth = rect.width;
-    const btnHeight = rect.height;
-
-    // Random direction
     const randomX = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
     const randomY = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
 
     submitBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
   } else {
-    submitBtn.style.transform = "none";
+    submitBtn.style.transform = "none"; // Resetear posición del botón
   }
 });
+
