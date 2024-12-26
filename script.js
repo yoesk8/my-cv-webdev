@@ -27,6 +27,9 @@ let currentLang = "en"; // Start with English
       heroTitle: "Welcome to My Portfolio",
       heroSubtitle: "I’m a passionate web developer crafting modern, responsive websites.",
       buttonText: "View My Work",
+      navAbout: "About",
+      navProjects: "Projects",
+      navContact: "Contact",
       translateButton: "Español",
       aboutTitle: "About Me",
       aboutSubtitle: "Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new",
@@ -45,6 +48,9 @@ let currentLang = "en"; // Start with English
       heroTitle: "Bienvenido a Mi Portafolio",
       heroSubtitle: "Soy un apasionado desarrollador web que crea sitios modernos y responsivos.",
       buttonText: "Observa Mi Trabajo",
+      navAbout: "Sobre mi",
+      navProjects: "Proyectos",
+      navContact: "Contacto",
       translateButton: "English",
       aboutTitle: "Sobre Mi",
       aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo.",
@@ -77,6 +83,9 @@ let currentLang = "en"; // Start with English
   const projectThreeDescription = document.getElementById("project-three-description");
   const projectFourDescription = document.getElementById("project-four-description");
   const viewProjectButton = document.querySelectorAll(".view-project-btn")
+  const navAbout = document.getElementById("nav-about");
+  const navProjects = document.getElementById("nav-projects");
+  const navContact = document.getElementById("nav-contact");
 
   translateBtn.addEventListener("click", () => {
     // Toggle language
@@ -90,6 +99,9 @@ let currentLang = "en"; // Start with English
     heroTitle.textContent = translations[currentLang].heroTitle;
     heroSubtitle.textContent = translations[currentLang].heroSubtitle;
     aboutTitle.textContent = translations[currentLang].aboutTitle;
+    navAbout.textContent = translations[currentLang].navAbout;
+    navProjects.textContent = translations[currentLang].navProjects;
+    navContact.textContent = translations[currentLang].navContact;
     aboutSubtitle.textContent = translations[currentLang].aboutSubtitle;
     ctaButton.textContent = translations[currentLang].buttonText;
     translateBtn.textContent = translations[currentLang].translateButton;
@@ -147,32 +159,32 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// Inicializar EmailJS con tu Public Key
+// Initialize EmailJS Public Key
 (function () {
-  emailjs.init("sg8m7PJKFYgFbwxTG"); // Reemplaza con tu clave pública de EmailJS
+  emailjs.init("sg8m7PJKFYgFbwxTG");
 })();
 
-// Seleccionar elementos del DOM
+// Get elements from dom
 const form = document.getElementById("contact-form");
 const submitBtn = document.getElementById("submit-btn");
 
-// Enviar formulario con EmailJS
+// Send From with EmailJS
 form.addEventListener("submit", (e) => {
-  e.preventDefault(); // Evita el comportamiento predeterminado del formulario
+  e.preventDefault();
 
-  // Obtener valores de los campos
+  // Get values needed
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
   if (name && email && message) {
-    const serviceID = "service_97oty2i"; // Reemplaza con tu Service ID
-    const templateID = "contact_form"; // Reemplaza con tu Template ID
+    const serviceID = "service_97oty2i";
+    const templateID = "contact_form";
 
-    // Crear objeto con los datos del formulario
+    // Create object with form data
     const formData = { name, email, message };
 
-    // Enviar datos con EmailJS
+    // Send data with EmailJS
     emailjs
       .send(serviceID, templateID, formData)
       .then(() => {
@@ -195,7 +207,6 @@ form.addEventListener("mousemove", () => {
   const message = document.getElementById("message").value.trim();
 
   if (!name || !email || !message) {
-    const rect = submitBtn.getBoundingClientRect();
     const randomX = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
     const randomY = (Math.random() > 0.5 ? 1 : -1) * Math.random() * 50;
 
@@ -204,7 +215,6 @@ form.addEventListener("mousemove", () => {
     submitBtn.style.transform = "none"; // Resetear posición del botón
   }
 });
-// Back to top button
 // Back to top button
 // Get elements
 const backToTopBtn = document.getElementById("back-to-top");
