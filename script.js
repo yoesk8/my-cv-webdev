@@ -204,4 +204,38 @@ form.addEventListener("mousemove", () => {
     submitBtn.style.transform = "none"; // Resetear posición del botón
   }
 });
+// Back to top button
+// Back to top button
+// Get elements
+const backToTopBtn = document.getElementById("back-to-top");
+const patrickMeme = document.getElementById("patrick-meme");
 
+// Show or hide the button based on scroll position
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    backToTopBtn.classList.add("visible");
+    patrickMeme.src = "patrick-down.png"; // Patrick pointing down
+  } else if (window.scrollY < 100) {
+    setTimeout(() => {
+      backToTopBtn.classList.remove("visible");
+    }, 800); // Delay of 2 seconds before fading out
+    patrickMeme.src = "patrick-up.png"; // Patrick pointing up
+  }
+});
+
+// Smooth scroll to the top with a midway image change
+backToTopBtn.addEventListener("click", () => {
+  const scrollDuration = 1000; // Total scroll duration in milliseconds
+  const halfwayPoint = scrollDuration / 2;
+
+  // Smooth scroll to the top
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  // Change Patrick's image halfway through the scroll
+  setTimeout(() => {
+    patrickMeme.src = "patrick-up.png"; // Patrick pointing up
+  }, halfwayPoint);
+});
