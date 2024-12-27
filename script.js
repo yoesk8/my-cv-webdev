@@ -7,16 +7,20 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Add active class to the clicked link and remove it from others
-navItems.forEach((link) => {
-  link.addEventListener('click', () => {
-    // Remove 'active' class from all links
-    navItems.forEach((item) => item.classList.remove('active'));
-    // Add 'active' class to the clicked link
-    link.classList.add('active');
+// Function to update active class on navbar links
+function setActiveNav() {
+  navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Remove 'active' class from all links
+      navItems.forEach((item) => item.classList.remove("active"));
+      // Add 'active' class to the clicked link
+      link.classList.add("active");
+    });
   });
-});
+}
 
+// Initialize the active class functionality on page load
+setActiveNav();
 
 // Translation Section
 
@@ -31,10 +35,12 @@ let currentLang = "en"; // Start with English
       navProjects: "Projects",
       navContact: "Contact",
       translateButton: "Español",
+      sendButton: "Send",
       aboutTitle: "About Me",
       aboutSubtitle: "Hello! I'm a passionate web developer with a focus on creating clean, modern, and responsive websites. I enjoy turning ideas into reality through code and design. My skills include HTML, CSS, and JavaScript. When I’m not coding, you’ll find me exploring new technologies or learning something new",
       projectsTitle: "My Projects",
       viewProjectButton: "View Project",
+      phoneNumber: "+44 7895628993",
       projectOneTitle: "Website for Freelancer",
       projectTwoTitle: "Bitcoin Quiz app",
       projectThreeTitle: "Pool Testing Buddy",
@@ -43,6 +49,10 @@ let currentLang = "en"; // Start with English
       projectTwoDescription: "A quiz game built with HTML, CSS, and JavaScript to test your knowledge about Bitcoin while displaying Bitcoin's real time price.",
       projectThreeDescription: "A fullstack website built with Flask to keep track of pool testing logs",
       projectFourDescription: " A fitness blog built with django and stripe with CRUD functionality and an e-commerce platform",
+      nameForm: "Name",
+      emailForm: "Email",
+      messageForm: "Message",
+      footerCredits: "Built with ❤️ using HTML, CSS, and JavaScript."
     },
     es: {
       heroTitle: "Bienvenido a Mi Portafolio",
@@ -50,12 +60,14 @@ let currentLang = "en"; // Start with English
       buttonText: "Observa Mi Trabajo",
       navAbout: "Sobre mi",
       navProjects: "Proyectos",
-      navContact: "Contacto",
+      navContact: "Contáctame",
       translateButton: "English",
+      sendButton: "Enviar",
       aboutTitle: "Sobre Mi",
       aboutSubtitle: "¡Hola! Soy un desarrollador web apasionado con un enfoque en crear sitios web limpios, modernos y responsivos. Disfruto convirtiendo ideas en realidad a través del código y el diseño. Mis habilidades incluyen HTML, CSS y JavaScript. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías o aprendiendo algo nuevo.",
       projectsTitle: "Mis Proyectos",
       viewProjectButton: "Ver Proyecto",
+      phoneNumber: "+593 980528893",
       projectOneTitle: "Sitio web para Negocio autónomo",
       projectTwoTitle: "Juego de Trivia sobre Bitcoin",
       projectThreeTitle: "Ayudante para tests de piscinas",
@@ -64,11 +76,16 @@ let currentLang = "en"; // Start with English
       projectTwoDescription: "Un juego de preguntas y respuestas construido con HTML, CSS y JavaScript para poner a prueba tus conocimientos sobre Bitcoin mientras muestra el precio en tiempo real de Bitcoin.",
       projectThreeDescription: "Un sitio web fullstack construido con Flask para llevar un registro de los registros de pruebas de piscina.",
       projectFourDescription: "Un blog de fitness construido con Django y Stripe con funcionalidad CRUD y una plataforma de comercio electrónico.",
+      nameForm: "Nombre",
+      emailForm: "Correo electrónico",
+      messageForm: "Mensaje",
+      footerCredits: "Hecho con ❤️ usando HTML, CSS, y JavaScript."
     },
   };
 
   const translateBtn = document.getElementById("translate-btn");
   const heroTitle = document.querySelector(".hero-content h1");
+  const contactTitle = document.querySelector(".contact-container h2");
   const aboutTitle = document.querySelector(".about-container h2");
   const aboutSubtitle = document.querySelector(".about-container p");
   const heroSubtitle = document.querySelector(".hero-content p");
@@ -83,15 +100,26 @@ let currentLang = "en"; // Start with English
   const projectThreeDescription = document.getElementById("project-three-description");
   const projectFourDescription = document.getElementById("project-four-description");
   const viewProjectButton = document.querySelectorAll(".view-project-btn")
-  const navAbout = document.getElementById("nav-about");
-  const navProjects = document.getElementById("nav-projects");
-  const navContact = document.getElementById("nav-contact");
+  const navAbout = document.querySelector('#nav-about a');
+  const navProjects = document.querySelector('#nav-projects a');
+  const navContact = document.querySelector('#nav-contact a');
+  const aboutFooter = document.getElementById("about-footer");
+  const projectsFooter = document.getElementById("projects-footer");
+  const contactFooter = document.getElementById("contact-footer");
+  const phoneFooter = document.getElementById("phone-selector");
+  const nameForm = document.getElementById("name-form");
+  const emailForm = document.getElementById("email-form");
+  const messageForm = document.getElementById("message-form");
+  const sendButton = document.querySelector(".contact-container .send-button");
+  const footerCredits = document.querySelector(".footer-credits p")
 
   translateBtn.addEventListener("click", () => {
     // Toggle language
     currentLang = currentLang === "en" ? "es" : "en";
+      // Reinitialize active class functionality after translation
+    setActiveNav();
 
-    // Button update
+    // view project Button update
 
     viewProjectButton.forEach(button=> button.textContent = translations[currentLang].viewProjectButton);
 
@@ -114,6 +142,16 @@ let currentLang = "en"; // Start with English
     projectTwoDescription.textContent = translations[currentLang].projectTwoDescription;
     projectThreeDescription.textContent = translations[currentLang].projectThreeDescription;
     projectFourDescription.textContent = translations[currentLang].projectFourDescription;
+    aboutFooter.textContent = translations[currentLang].navAbout;
+    contactFooter.textContent = translations[currentLang].navContact;
+    projectsFooter.textContent = translations[currentLang].navProjects;
+    phoneFooter.textContent = translations[currentLang].phoneNumber;
+    contactTitle.textContent = translations[currentLang].navContact;
+    nameForm.textContent = translations[currentLang].nameForm;
+    emailForm.textContent = translations[currentLang].emailForm;
+    messageForm.textContent = translations[currentLang].messageForm;
+    sendButton.textContent = translations[currentLang].sendButton;
+    footerCredits.textContent = translations[currentLang].footerCredits;
   });
 
   // Select modal elements
