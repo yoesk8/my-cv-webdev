@@ -170,9 +170,8 @@ projectButtons.forEach((button) => {
     const title = button.dataset[currentLang === "en" ? "titleEn" : "titleEs"];
     const description = button.dataset[currentLang === "en" ? "descriptionEn" : "descriptionEs"];
     const image = button.dataset.image;
-    const liveLink = '#'; // Replace with actual live link
-    const githubLink = '#'; // Replace with actual GitHub link
-
+    const liveLink = button.dataset.livelink;
+    const githubLink = button.dataset.githublink; 
     // Update modal content
     modalTitle.textContent = title;
     modalImage.src = image;
