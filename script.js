@@ -249,3 +249,4 @@ backToTopBtn.addEventListener("click", () => {
     patrickMeme.src = "patrick-up.png"; // Patrick pointing up
   }, halfwayPoint);
 });
+
