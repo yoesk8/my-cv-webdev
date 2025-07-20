@@ -41,6 +41,8 @@ let currentLang = "en"; // Start with English
       projectsTitle: "My Projects",
       viewProjectButton: "View Project",
       phoneNumber: "+44 7895628993",
+      projectCeroTitle: "Website for Freelancer",
+      projectCeroOneTitle: "Website for Freelancer",
       projectOneTitle: "Website for Freelancer",
       projectTwoTitle: "Bitcoin Quiz app",
       projectThreeTitle: "Pool Testing Buddy",
